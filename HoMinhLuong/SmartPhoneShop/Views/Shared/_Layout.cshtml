@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <link href="~/Public/Css/Layout.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <section class="topbar bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">Chào mừng bạn đến với Minh Lượng Mobile </div>
+                <div class="col-md text-right">Tài Khoản </div>
+            </div>
+        </div>
+    </section>
+    <!--End topbar-->
+
+    <section class="header bg-white ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="~/Public/image/ll.png" />
+                </div>
+                <div class="col-md-2">GIAO HÀNG 24H</div>
+                <div class="col-md-2">CHẤT LƯỢNG</div>
+                <div class="col-md-2">NGUỒN GỐC</div>
+                <div class="col-md-2">GIỎ HÀNG</div>
+            </div>
+        </div>
+    </section>
+    <!--End header-->
+
+    <section class="mainmenu bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-darkt">
+                <a class="navbar-brand" href="#">TRANG CHỦ </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">GIỚI THIỆU <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                SẢN PHẨM
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">TIN TỨC</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">LIÊN HỆ</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+                        <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <!--End mainmenu-->
+
+    <section class="maincontent">
+        @RenderBody()
+    </section>
+    <!--End maincontent-->
+
+    
+    <!--End Banner-->
+
+    <section class="footer">
+    </section>
+    <!--End footer-->
+
+    <section class="copyright">
+    </section>
+    <!--End copyright-->
+
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
