@@ -15,3 +15,51 @@
 a, a:hover, a:active, a:visited, a:focus {
     text-decoration: none;
 }
+.cpr{
+    font-size:13px;
+}
+.fa-globe-asia{
+    padding-right:5px;
+}
+.fa-user {
+    padding-right: 5px;
+}
+i.fas.fa-check-circle {
+    padding-top: 3px;
+    font-size: 45px;
+    padding-left: 26px;
+}
+i.fas.fa-clock {
+    padding-top: 3px;
+    font-size: 45px;
+    padding-left: 26px;
+}
+i.fas.fa-cart-plus {
+    padding-top: 3px;
+    font-size: 45px;
+    padding-left: 13px;
+}
+I.fas.fa-bullhorn {
+    padding-top: 3px;
+    font-size: 45px;
+    padding-left: 21px;
+}
+.btn-primary{
+    display: block;
+}
+.col-md{
+    padding: .5rem 1rem;
+}
+nav .dropdown-menu {
+    background-color: #343A40;
+    position: absolute;
+}
+.tieude {
+    background: #ff000052 !important;
+    display: block;
+    font-weight: bold;
+    font-size: 23px;
+    padding-bottom: -7px;
+    padding-left: 7px;
+    margin: 26px 11px 13px 14px;
+}
