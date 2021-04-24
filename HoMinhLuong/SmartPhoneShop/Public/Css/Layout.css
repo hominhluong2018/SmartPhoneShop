@@ -63,3 +63,14 @@ nav .dropdown-menu {
     padding-left: 7px;
     margin: 26px 11px 13px 14px;
 }
+
+.boder-gray {
+    border: 1px solid rgba(0,0,0,.125) !important;
+}
+.pricesale{
+    text-decoration: line-through !important;
+}
+
+.category-item:first-child {
+    margin-top: 0px !important;
+}

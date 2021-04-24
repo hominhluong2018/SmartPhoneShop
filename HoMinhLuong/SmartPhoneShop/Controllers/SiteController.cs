@@ -11,21 +11,23 @@ namespace SmartPhoneShop.Controllers
 {
     public class SiteController : Controller
     {
-        LinkDAO linkDAO = new LinkDAO();
-        ProductDAO productDAO = new ProductDAO();
-        PostDAO postDAO = new PostDAO();
+        LinkDAO _linkDAO = new LinkDAO();
+        ProductDAO _productDAO = new ProductDAO();
+        PostDAO _postDAO = new PostDAO();
+        CategoryDAO _categoryDAO = new CategoryDAO();
+       
         // GET: Site
         public ActionResult Index(String slug = "")
         {
-            SmartPhoneDBContext db = new SmartPhoneDBContext();
-            db.Products.Count();
+            //SmartPhoneDBContext db = new SmartPhoneDBContext();
+            //db.Products.Count();
             if (slug == "")
             {
                 return this.Home();
             }
             else
             {
-                Link row_link = linkDAO.getRow(slug);
+                Link row_link = _linkDAO.getRow(slug);
                 if (row_link != null)
                 {
                     string typelink = row_link.TypeLink;
@@ -39,30 +41,45 @@ namespace SmartPhoneShop.Controllers
                 else
                 {
                     //chi tiet sp
-                    if (productDAO.getRow(slug) != null)
+                    if (_productDAO.getRow(slug) != null)
                     {
                         return this.ProductDetail(slug);
                     }
-                    if (postDAO.getRow(slug) != null)
+                    if (_postDAO.getRow(slug) != null)
                     {
                         return this.PostDetail(slug);
                     }
                     return this.Error404(slug);
                 }
             }
-            return this.Error404(slug);
+            return this.Home();
         }
         public ActionResult Home()
         {
-            return View("Home");
+             var vm = _categoryDAO.getList(0);
+            return View("Home", vm);
         }
         public ActionResult Product()
         {
             return View("Product");
         }
+        public ActionResult ProductHome(int catId, string name)
+        {
+            ViewBag.NameCat = name; 
+            List<int> listcatid = _categoryDAO.getListId(catId);
+            int limit = 6;
+            var list = _productDAO.GetList(listcatid, limit);
+            return View("ProductHome", list);
+        }
         public ActionResult ProductCategory(String slug)
         {
-            return View("ProductCategory");
+            int limit = 1000;
+            int skip = 0;
+            var row_cat = _categoryDAO.getRow(slug);
+            int catId = row_cat.Id;
+            List<int> listcatid = _categoryDAO.getListId(catId);
+            var list = _productDAO.GetList(listcatid, limit, skip);
+            return View("ProductCategory", list);
         }
         public ActionResult ProductDetail(String slug)
         {

@@ -107,13 +107,29 @@
     <Content Include="Public\Css\LayoutAdmin.css" />
     <Content Include="Public\Css\news.css" />
     <Content Include="Public\Css\User.css" />
-    <Content Include="Public\image\banner1.png" />
-    <Content Include="Public\image\ip\ip12pro.jpg" />
+    <Content Include="Public\image\ip\11.jpg" />
+    <Content Include="Public\image\ip\8plus.jpg" />
+    <Content Include="Public\image\ip\x.jpg" />
+    <Content Include="Public\image\ip\xr.jpg" />
+    <Content Include="Public\image\ip\xs.jpg" />
+    <Content Include="Public\image\op\a15.jpg" />
+    <Content Include="Public\image\op\a92.jpg" />
+    <Content Include="Public\image\op\a93.jpg" />
+    <Content Include="Public\image\op\a94.jpg" />
+    <Content Include="Public\image\op\rn4.jpg" />
+    <Content Include="Public\image\slider\slider2.png" />
+    <Content Include="Public\image\ip\12.jpg" />
     <Content Include="Public\image\ll.png" />
     <Content Include="Public\image\mi\mi11.jpg" />
     <Content Include="Public\image\news\co-nen-mua-ip12.jpg" />
-    <Content Include="Public\image\op\oprn5.jpg" />
+    <Content Include="Public\image\op\rn5.jpg" />
+    <Content Include="Public\image\slider\slider1.png" />
+    <Content Include="Public\image\ss\n20.jpg" />
+    <Content Include="Public\image\ss\s10plus.jpg" />
+    <Content Include="Public\image\ss\s20.jpg" />
     <Content Include="Public\image\ss\s21.jpg" />
+    <Content Include="Public\image\ss\s8plus.jpg" />
+    <Content Include="Public\image\ss\s9plus.jpg" />
     <Content Include="Public\image\tin.jpg" />
     <Content Include="Public\image\tinn.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -247,7 +263,6 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -278,11 +293,13 @@
     <Content Include="Views\Site\Error404.cshtml" />
     <Content Include="Views\Module\MainMenu.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\User\Signin.cshtml" />
     <Content Include="Views\User\Regist.cshtml" />
+    <Content Include="Views\Module\Slideshow.cshtml" />
+    <Content Include="Views\Module\ListCategory.cshtml" />
+    <Content Include="Views\Module\ProductBuyHot.cshtml" />
+    <Content Include="Views\Site\ProductHome.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

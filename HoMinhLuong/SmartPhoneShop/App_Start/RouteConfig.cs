@@ -15,7 +15,7 @@ namespace SmartPhoneShop
             routes.MapRoute(
                 name: "TatCaSanPham",
                 url: "san-pham",
-                defaults: new { controller = "SanPham", action = "Product", id = UrlParameter.Optional }
+                defaults: new { controller = "Site", action = "Product" }
             );
             routes.MapRoute(
                 name: "TatCaBaiViet",

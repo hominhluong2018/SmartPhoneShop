@@ -78,7 +78,7 @@ namespace SmartPhoneShop.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Slug,Name,CreatedBy,CreatedDate,UpdatedBy,UpdatedDate")] Category category)
+        public ActionResult Edit( Category category)
         {
             if (ModelState.IsValid)
             {

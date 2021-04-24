@@ -53,6 +53,7 @@
     <Compile Include="DAO\MenuDAO.cs" />
     <Compile Include="DAO\PostDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
+    <Compile Include="DAO\SliderDAO.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Contact.cs" />
     <Compile Include="Model\Link.cs" />

@@ -12,9 +12,12 @@ namespace MyLibrary.DAO
     {
         private SmartPhoneDBContext db = new SmartPhoneDBContext();
         //List Object
-        public List<Category> getList()
+        public List<Category> getList(int? parentid=0)
         {
-            var list = db.Categorys.ToList();
+            var list = db.Categorys
+                .Where(m=>m.ParentId==parentid && m.Status==1)
+                .OrderBy(m=>m.Orders)
+                .ToList();
             return list;
 
         }
@@ -55,6 +58,39 @@ namespace MyLibrary.DAO
         {
             db.Categorys.Remove(row);
             db.SaveChanges();
+        }
+        public List<int> getListId(int parentid)
+        {
+            //Xử lí
+            List<int> listcatid = new List<int>();
+            List<Category> listcategory1 = this.getList(parentid);
+            if (listcategory1.Count > 0)
+            {
+                foreach (var cat1 in listcategory1)
+                {
+                    listcatid.Add(cat1.Id);
+                    List<Category> listcategory2 = this.getList(cat1.Id);
+                    if (listcategory2.Count > 0)
+                    {
+                        foreach (var cat2 in listcategory2)
+                        {
+                            listcatid.Add(cat2.Id);
+                            List<Category> listcategory3 = this.getList(cat2.Id);
+                            if (listcategory3.Count > 0)
+                            {
+                                foreach (var cat3 in listcategory2)
+                                {
+                                    listcatid.Add(cat3.Id);
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+            listcatid.Add(parentid);
+
+            return listcatid;
         }
     }
 }

@@ -11,12 +11,14 @@ namespace SmartPhoneShop.Controllers
     public class ModuleController : Controller
     {
         MenuDAO menuDAO = new MenuDAO();
+        SliderDAO sliderDAO = new SliderDAO();
+        CategoryDAO categoryDAO = new CategoryDAO();
         // GET: Module
         public ActionResult MainMenu()
         {
             var list = menuDAO.GetList(0);
             var menu = new List<MenuVM>();
-            foreach (var item in  list)
+            foreach (var item in list)
             {
                 var childMenu = menuDAO.GetList(item.Id);
                 var childMenuVm = new List<MenuVM>();
@@ -42,5 +44,20 @@ namespace SmartPhoneShop.Controllers
 
             return View(menu);
         }
+        public ActionResult Slideshow()
+        {
+            var list = sliderDAO.getList("slideshow"); 
+            return View("Slideshow", list);
+        }
+        public ActionResult ListCategory()
+        {
+            var list = categoryDAO.getList(0);
+            return View("ListCategory", list);
+        }
+        public ActionResult ProductBuyHot()
+        {
+            return View("ProductBuyHot");
+        }
     }
 }
+ 

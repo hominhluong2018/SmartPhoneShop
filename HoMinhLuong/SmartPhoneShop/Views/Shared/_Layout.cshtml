@@ -31,7 +31,7 @@
     </section>
     <!--End topbar-->
 
-    <section class="header bg-white ">
+    <section class="clearfix header bg-white ">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -59,19 +59,19 @@
     </section>
     <!--End header-->
 
-    <section class="mainmenu bg-dark">
+    <section class="clearfix mainmenu bg-dark">
         <div class="container">
             @Html.Action("MainMenu", "Module")
         </div>
     </section>
     <!--End mainmenu-->
 
-    <section class="maincontent">
+    <section class="clearfix maincontent" >
         @RenderBody()
     </section>
     <!--End maincontent-->
 
-    <section class="footer">
+    <section class="footer mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
