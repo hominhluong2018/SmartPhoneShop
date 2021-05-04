@@ -1,0 +1,76 @@
+﻿    @model IEnumerable<MyLibrary.Model.User>
+
+@{
+    ViewBag.Title = "Deltrash";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-6 text-danger text-uppercase">
+                <strong>THÙNG RÁC</strong>
+            </div>
+            <div class="col-md-6 text-right">
+                <a class="btn btn-sm btn-success" href="@Url.Action("Create","User")"><i class="fas fa-backward"></i> Quay về danh sách</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        @Html.Partial("_XMessage")
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>
+                    <input type="checkbox" name="checkAll" value="all" />
+                </th>
+                <th>Tên thành viên</th>
+                <th>Số điện thoại</th>
+                <th>Ngày tạo</th>
+                <th>Chức Năng</th>
+                <th>ID</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="checkAll" value="all" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @if (item.Status == 1)
+                        {
+                            <a class="btn btn-sm btn-outline-success" href="@Url.Action("Status","User",new { id = item.Id })">
+                                <i class="fas fa-toggle-on"></i>
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-sm btn-outline-danger" href="@Url.Action("Status","User",new { id = item.Id })">
+                                <i class="fas fa-toggle-on"></i>
+                            </a>
+                        }
+                        <a class="btn btn-sm btn-outline-dark" href="@Url.Action("Edit","User",new { id = item.Id })">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a class="btn btn-sm btn-outline-danger" href="@Url.Action("Delete","User",new { id = item.Id })">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

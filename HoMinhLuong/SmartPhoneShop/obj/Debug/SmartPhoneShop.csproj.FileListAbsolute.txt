@@ -110,3 +110,7 @@ D:\Study\Asp.net\HoMinhLuong\SmartPhoneShop\obj\Debug\SmartPhoneShop.csproj.Core
 D:\Study\Asp.net\HoMinhLuong\SmartPhoneShop\obj\Debug\SmartPhoneShop.csproj.CopyComplete
 D:\Study\Asp.net\HoMinhLuong\SmartPhoneShop\obj\Debug\SmartPhoneShop.dll
 D:\Study\Asp.net\HoMinhLuong\SmartPhoneShop\obj\Debug\SmartPhoneShop.pdb
+D:\Study\Asp.net\HoMinhLuong\SmartPhoneShop\bin\PagedList.dll
+D:\Study\Asp.net\HoMinhLuong\SmartPhoneShop\bin\PagedList.Mvc.dll
+D:\Study\Asp.net\HoMinhLuong\SmartPhoneShop\bin\PagedList.xml
+D:\Study\Asp.net\HoMinhLuong\SmartPhoneShop\bin\PagedList.Mvc.xml

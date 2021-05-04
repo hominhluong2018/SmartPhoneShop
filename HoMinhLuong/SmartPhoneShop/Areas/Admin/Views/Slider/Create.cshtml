@@ -1,0 +1,68 @@
+﻿@model MyLibrary.Model.Slider
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6 text-danger text-uppercase">
+                    <strong>THÊM VÀO SLIDER</strong>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button type="submit" class="btn btn-success btn-sm">
+                        <i class="fas fa-save">Lưu[Thêm]</i>
+                    </button>
+                    <a class="btn btn-sm btn-success" href="@Url.Action("index","Slider")"><i class="fas fa-backward"></i> Quay về danh sách</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Tên Slider</label>
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Link</label>
+                        @Html.EditorFor(model => model.Link, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Link, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Sắp Xếp</label>
+                        @Html.EditorFor(model => model.Orders, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Orders, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Ảnh</label>
+                        <input type="file" name="ảnh" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.Img, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Trạng thái</label>
+                        @Html.DropDownListFor(model => model.Status, new[] { new SelectListItem { Text = "Hiện", Value = "1" }, new SelectListItem { Text = "Ẩn", Value = "2" } }, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Vị Trí</label>
+                        @Html.EditorFor(model => model.Position, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Position, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,6 +1,8 @@
-﻿@model IEnumerable<MyLibrary.Model.Product>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model  PagedList.IPagedList<MyLibrary.Model.Product>
 @{
-    ViewBag.Title = "ProductCategory";
+    ViewBag.Title = ViewBag.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
@@ -8,12 +10,13 @@
         @Html.Action("ListCategory", "Module")
     </div>
     <div class="col-md-9 mt-5">
+        <h3 class="text-center text-danger">@ViewBag.Title</h3>
         <div class="row">
             @foreach (var pro in Model)
             {
                 <div class="col-md-4 mt-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="@pro.Img">
+                        <img class="card-img-top" src="~/Public/image/product/@pro.Img">
                         <div class="card-body">
                             <h5 class="card-title text-center">@pro.Name</h5>
                             <p class="card-text text-center text-danger font-weight-bold">
@@ -27,6 +30,9 @@
                     </div>
                 </div>
             }
+        </div>
+        <div class="phantrang">
+            @Html.PagedListPager(Model, page => Url.Action("Index", "Site", new { page, size = ViewBag.currentSize, slug = ViewBag.Slug }))
         </div>
     </div>
 </div>

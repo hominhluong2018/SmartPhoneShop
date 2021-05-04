@@ -17,11 +17,21 @@ namespace SmartPhoneShop
                 url: "san-pham",
                 defaults: new { controller = "Site", action = "Product" }
             );
+        //    routes.MapRoute(
+        //    name: "GioiThieu",
+        //    url: "gioi-thieu",
+        //    defaults: new { controller = "Site", action = "PostPage", id = UrlParameter.Optional }
+        //);
             routes.MapRoute(
                 name: "TatCaBaiViet",
                 url: "bai-viet",
                 defaults: new { controller = "Site", action = "Post", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+             name: "LienHe",
+             url: "lien-he",
+             defaults: new { controller = "Contact", action = "Index"}
+         );
             //URL cấp 1
             routes.MapRoute(
                 name: "SiteSlug",

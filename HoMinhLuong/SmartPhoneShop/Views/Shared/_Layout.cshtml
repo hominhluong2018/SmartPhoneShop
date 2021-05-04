@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>@Page.Title</title>
+    <title>@ViewBag.Title</title>
     <link href="~/Public/Css/User.css" rel="stylesheet" />
     <link href="~/Public/Css/news.css" rel="stylesheet" />
     <link href="~/Public/Css/Layout.css" rel="stylesheet" />
@@ -11,6 +11,8 @@
     @RenderSection("head", required: false)
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="cRELGlEJ"></script>
     <section class="topbar bg-light">
         <div class="container">
             <div class="row">
@@ -66,7 +68,7 @@
     </section>
     <!--End mainmenu-->
 
-    <section class="clearfix maincontent" >
+    <section class="clearfix maincontent">
         @RenderBody()
     </section>
     <!--End maincontent-->

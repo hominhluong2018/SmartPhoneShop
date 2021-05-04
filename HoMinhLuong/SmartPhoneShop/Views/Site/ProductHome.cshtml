@@ -7,9 +7,11 @@
     {
         <div class="col-md-4 mt-4">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="@pro.Img">
-                <div class="card-body">
-                    <h5 class="card-title text-center">@pro.Name</h5>
+                <a href="~/@pro.Slug"></a>
+                <img class="card-img-top" src="~/Public/image/product/@pro.Img">
+                <div class="card-body text-center">
+                    <a href="~/@pro.Slug">@pro.Name</a>
+                    @*<h5 class="card-title text-center">@pro.Name</h5>*@
                     <p class="card-text text-center text-danger font-weight-bold">
                         @String.Format("{0:n0}", pro.PriceSale) VNĐ
                     </p>

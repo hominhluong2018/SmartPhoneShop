@@ -16,6 +16,28 @@ namespace MyLibrary.DAO
             return list;
 
         }
+
+        public List<Menu> getList(string page = "Index")
+        {
+            if (page == "Index")
+            {
+                var list = db.Menus
+                .Where(m => m.Status != 0)
+                .OrderBy(m => m.CreatedDate)
+                .ToList();
+                return list;
+            }
+            else
+            {
+                var list = db.Menus
+                .Where(m => m.Status == 0)
+                .OrderBy(m => m.CreatedDate)
+                .ToList();
+                return list;
+            }
+
+
+        }
         // Trả về số lượng
         public long getCount()
         {
@@ -46,6 +68,12 @@ namespace MyLibrary.DAO
         public void getDelete(Menu row)
         {
             db.Menus.Remove(row);
+            db.SaveChanges();
+        }
+        public void Delete(int? id)
+        {
+            var menu = db.Menus.Where(m => m.Id == id).FirstOrDefault();
+            db.Menus.Remove(menu);
             db.SaveChanges();
         }
     }

@@ -12,10 +12,31 @@ namespace MyLibrary.DAO
     {
         private SmartPhoneDBContext db = new SmartPhoneDBContext();
         //List Object
+        public List<Category> getList(string page = "Index")
+        {
+            if (page == "Index")
+            {
+                var list = db.Categorys
+                .Where(m => m.Status != 0)
+                .OrderBy(m => m.CreatedDate)
+                .ToList();
+                return list;
+            }
+            else
+            {
+                var list = db.Categorys
+                .Where(m => m.Status == 0)
+                .OrderBy(m => m.CreatedDate)
+                .ToList();
+                return list;
+            }
+
+
+        }
         public List<Category> getList(int? parentid=0)
         {
             var list = db.Categorys
-                .Where(m=>m.ParentId==parentid && m.Status==1)
+                .Where(m=>(m.ParentId==parentid || m.ParentId == null) && m.Status==1)
                 .OrderBy(m=>m.Orders)
                 .ToList();
             return list;
@@ -48,7 +69,7 @@ namespace MyLibrary.DAO
 
         }
         //Sửa
-        public void getUpdate(Category row)
+        public void Update(Category row)
         {
             db.Entry(row).State = EntityState.Modified;
             db.SaveChanges();
@@ -59,6 +80,15 @@ namespace MyLibrary.DAO
             db.Categorys.Remove(row);
             db.SaveChanges();
         }
+
+        public void Delete(int? id)
+        {   
+            var category = db.Categorys.Where(m => m.Id == id).FirstOrDefault();
+            db.Categorys.Remove(category);
+            db.SaveChanges();
+        }
+
+
         public List<int> getListId(int parentid)
         {
             //Xử lí
@@ -85,7 +115,6 @@ namespace MyLibrary.DAO
                             }
                         }
                     }
-
                 }
             }
             listcatid.Add(parentid);

@@ -1,1 +1,24 @@
-﻿
+﻿@model IEnumerable<MyLibrary.Model.Product>
+<div class="card mt-3">
+    <div class="card-header">
+        Sản Phẩm Mới
+    </div>
+    <div class="card-body">
+        @foreach (var pro in Model)
+        {
+            <div class="motsanpham-khuyenmai">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="@pro.Slug"><img src="~/Public/image/product/@pro.Img" width="100%" height="150px" alt="Alternate Text" /></a>
+                    </div>
+                    <div class="col-6 mt-4">
+                        <p class="ttt-tieude"><a href="@pro.Slug">@pro.Name</a></p>
+                        <p class="gia-km"><i class="sp-r"></i> <del><i class="sp-r">@pro.PriceSale $</i></del></p>
+                    </div>
+                </div>
+            </div>@*het mot san pham khuyen mai*@
+        }
+    </div>
+</div>
+@*  het san pham khuyen mai*@
+

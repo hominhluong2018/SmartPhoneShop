@@ -22,3 +22,7 @@ D:\Study\Asp.net\HoMinhLuong\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInp
 D:\Study\Asp.net\HoMinhLuong\MyLibrary\obj\Debug\MyLibrary.csproj.CopyComplete
 D:\Study\Asp.net\HoMinhLuong\MyLibrary\obj\Debug\MyLibrary.dll
 D:\Study\Asp.net\HoMinhLuong\MyLibrary\obj\Debug\MyLibrary.pdb
+D:\Study\Asp.net\HoMinhLuong\MyLibrary\bin\Debug\PagedList.dll
+D:\Study\Asp.net\HoMinhLuong\MyLibrary\bin\Debug\PagedList.Mvc.dll
+D:\Study\Asp.net\HoMinhLuong\MyLibrary\bin\Debug\PagedList.xml
+D:\Study\Asp.net\HoMinhLuong\MyLibrary\bin\Debug\PagedList.Mvc.xml
