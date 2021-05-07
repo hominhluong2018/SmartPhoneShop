@@ -15,13 +15,20 @@
         @foreach (var cat in Model)
         {
             @*<h3 class="text-center mt-5 category-item">
-                <a href="~@cat.Slug">@cat.Name</a>
-            </h3>*@
-            @Html.Action("ProductHome", "Site", new { @catId = cat.Id, @name = cat.Name})
+                    <a href="~@cat.Slug">@cat.Name</a>
+                </h3>*@
+            @Html.Action("ProductHome", "Site", new { @catId = cat.Id, @name = cat.Name })
         }
         <!--End div Product-->
     </div>
-</div>
+    <div class="container">
+                <h2> Bình Luận</h2>
+                <div class="my-3">
+                    <div class="fb-like my-2" data-href="https://localhost:44341" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                    <div class="fb-comments style:" data-href="https://localhost:44317/" data-width="" data-numposts="5"></div>
+                </div>
+            </div>
+        </div>
 
 
 

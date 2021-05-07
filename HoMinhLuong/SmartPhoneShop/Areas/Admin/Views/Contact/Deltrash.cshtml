@@ -1,31 +1,30 @@
-﻿@model IEnumerable<MyLibrary.Model.Product>
+﻿    @model IEnumerable<MyLibrary.Model.Contact>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Deltrash";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
+
 <div class="card">
     <div class="card-header">
         <div class="row">
             <div class="col-md-6 text-danger text-uppercase">
-                <strong>DANH SÁCH SẢN PHẨM</strong>
+                <strong>THÙNG RÁC</strong>
             </div>
             <div class="col-md-6 text-right">
-                <a class="btn btn-sm btn-success" href="@Url.Action("Create","Product")"><i class="fas fa-cart-plus"></i> Thêm</a>
-                <a class="btn btn-sm btn-danger" href="@Url.Action("Trash","Product")"><i class="fas fa-trash-alt"></i> Thùng Rác</a>
-                @*<a class="btn btn-primary" href="/Admin/Product/Create">Thêm</a>*@
+                <a class="btn btn-sm btn-success" href="#"><i class="fas fa-backward"></i> Quay về danh sách</a>
             </div>
         </div>
     </div>
     <div class="card-body">
         @Html.Partial("_XMessage")
-        <table class="table table-bordered table-striped">
+        <table class="table table-bContacted table-striped">
             <tr>
                 <th>
                     <input type="checkbox" name="checkAll" value="all" />
                 </th>
-                <th>Tên Sản Phẩm</th>
-                <th>Slug</th>
+                <th>Tên đầy đủ</th>
+                <th>Số điện thoại</th>
                 <th>Ngày tạo</th>
                 <th>Chức Năng</th>
                 <th>ID</th>
@@ -38,10 +37,10 @@
                         <input type="checkbox" name="checkAll" value="all" />
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Name)
+                        @Html.DisplayFor(modelItem => item.FullName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Slug)
+                        @Html.DisplayFor(modelItem => item.Phone)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.CreatedDate)
@@ -49,20 +48,17 @@
                     <td>
                         @if (item.Status == 1)
                         {
-                            <a class="btn btn-sm btn-outline-success" href="@Url.Action("Status","Product",new { id = item.Id })">
+                            <a class="btn btn-sm btn-outline-success" href="@Url.Action("Status","Contact",new { id = item.Id })">
                                 <i class="fas fa-toggle-on"></i>
                             </a>
                         }
                         else
                         {
-                            <a class="btn btn-sm btn-outline-danger" href="@Url.Action("Status","Product",new { id = item.Id })">
+                            <a class="btn btn-sm btn-outline-danger" href="@Url.Action("Status","Contact",new { id = item.Id })">
                                 <i class="fas fa-toggle-on"></i>
                             </a>
                         }
-                        <a class="btn btn-sm btn-outline-dark" href="@Url.Action("Edit","Product",new { id = item.Id })">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-sm btn-outline-danger" href="@Url.Action("DelTrash","Product",new { id = item.Id })">
+                        <a class="btn btn-sm btn-outline-danger" href="@Url.Action("Delete","Contact",new { id = item.Id })">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </td>
@@ -75,5 +71,3 @@
         </table>
     </div>
 </div>
-
-

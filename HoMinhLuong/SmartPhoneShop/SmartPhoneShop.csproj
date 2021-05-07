@@ -117,7 +117,9 @@
     <Content Include="Areas\Public\css\login.css" />
     <Content Include="Public\Css\news.css" />
     <Content Include="Public\Css\User.css" />
+    <Content Include="Public\image\aa.png" />
     <Content Include="Public\image\ava.png" />
+    <Content Include="Public\image\gioithieu.jpg" />
     <Content Include="Public\image\product\ip6.jpg" />
     <Content Include="Public\image\product\ip6p.jpg" />
     <Content Include="Public\image\product\mi10t.jpg" />
@@ -219,6 +221,14 @@
     <Content Include="Areas\Admin\Views\Slider\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Slider\Trash.cshtml" />
     <Content Include="ClassDiagram2.cd" />
+    <Content Include="Areas\Admin\Views\Order\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Deltrash.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Deltrash.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Trash.cshtml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -317,12 +327,16 @@
     <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\SliderController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\GioithieuController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
@@ -355,7 +369,6 @@
     <Content Include="Views\Site\PostPage.cshtml" />
     <Content Include="Views\Site\Error404.cshtml" />
     <Content Include="Views\Module\MainMenu.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\User\Signin.cshtml" />
     <Content Include="Views\User\Regist.cshtml" />
@@ -364,6 +377,9 @@
     <Content Include="Views\Module\ProductBuyHot.cshtml" />
     <Content Include="Views\Site\ProductHome.cshtml" />
     <Content Include="Views\Module\LastNews.cshtml" />
+    <Content Include="Views\Gioithieu\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
