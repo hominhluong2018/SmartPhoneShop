@@ -28,6 +28,11 @@ namespace SmartPhoneShop
                 defaults: new { controller = "Site", action = "Post", id = UrlParameter.Optional }
             );
             routes.MapRoute(
+             name: "GioHang",
+             url: "gio-hang",
+             defaults: new { controller = "Cart", action = "Index", id = UrlParameter.Optional }
+         );
+            routes.MapRoute(
              name: "LienHe",
              url: "lien-he",
              defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },

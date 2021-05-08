@@ -10,9 +10,14 @@
         </div>
         <div class="col-md-6">
             <h1>@Model.Name</h1>
+            <p class="text-center">@Model.Detail</p>
             <h3 class="card-text text-center text-danger font-weight-bold">
                 @String.Format("{0:n0}", Model.PriceSale) VNĐ
             </h3>
+            <div class="col-6">
+                <a href="@Url.Action("AddItem","Cart", new {productId = Model.Id})"><div class="mua-hang them-gio-hang">Thêm Vào Giỏ Hàng</div></a>
+            </div>
+            <a href="" class="btn btn-primary d-block">MUA NGAY</a>
         </div>
     </div>
     Bình Luận

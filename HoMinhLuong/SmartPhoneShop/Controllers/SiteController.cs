@@ -20,8 +20,8 @@ namespace SmartPhoneShop.Controllers
         // GET: Site
         public ActionResult Index(String slug = "", int? page=1)
         {
-            //SmartPhoneDBContext db = new SmartPhoneDBContext();
-            //db.Products.Count();
+            SmartPhoneDBContext db = new SmartPhoneDBContext();
+            db.Products.Count();
             if (slug == "")
             {
                 return this.Home();

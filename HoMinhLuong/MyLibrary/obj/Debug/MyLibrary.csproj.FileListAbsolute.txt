@@ -17,7 +17,6 @@ D:\Study\Asp.net\HoMinhLuong\MyLibrary\bin\Debug\EntityFramework.dll
 D:\Study\Asp.net\HoMinhLuong\MyLibrary\bin\Debug\EntityFramework.SqlServer.dll
 D:\Study\Asp.net\HoMinhLuong\MyLibrary\bin\Debug\EntityFramework.xml
 D:\Study\Asp.net\HoMinhLuong\MyLibrary\bin\Debug\EntityFramework.SqlServer.xml
-D:\Study\Asp.net\HoMinhLuong\MyLibrary\obj\Debug\MyLibrary.csprojAssemblyReference.cache
 D:\Study\Asp.net\HoMinhLuong\MyLibrary\obj\Debug\MyLibrary.csproj.CoreCompileInputs.cache
 D:\Study\Asp.net\HoMinhLuong\MyLibrary\obj\Debug\MyLibrary.csproj.CopyComplete
 D:\Study\Asp.net\HoMinhLuong\MyLibrary\obj\Debug\MyLibrary.dll
