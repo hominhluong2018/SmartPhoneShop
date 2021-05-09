@@ -157,6 +157,7 @@
     <Content Include="Public\image\product\s9plus.jpg" />
     <Content Include="Public\image\tin.jpg" />
     <Content Include="Public\image\tinn.jpg" />
+    <Content Include="Public\js\cart.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

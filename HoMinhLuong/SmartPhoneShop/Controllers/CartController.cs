@@ -60,7 +60,7 @@ namespace SmartPhoneShop.Controllers
                 item.Quantity = quantity;
                 item.Product = db.Products.Find(productId);
                 var list = new List<Cart>();
-
+                list.Add(item);
                 //gan vao session
                 Session[CartSession] = list;
             }
@@ -82,5 +82,23 @@ namespace SmartPhoneShop.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public ActionResult UpdateCart(int productId, int quatity)
+        {
+            var cartSession = Session[CartSession];
+            var carts = (List<Cart>)cartSession;
+
+            foreach (var item in carts)
+            {
+                if (item.ProductId == productId)
+                {
+                    item.Quantity = quatity;
+                }
+            }
+
+            Session[CartSession] = carts;
+
+            return Json(new { Success = true });
+        }
     }
 }

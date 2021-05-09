@@ -23,8 +23,8 @@ namespace MyLibrary.Model
         [Required]
         public string Detail { get; set; }
         public int Number { get; set; }
-        public float Price { get; set; }
-        public float PriceSale { get; set; }
+        public decimal Price { get; set; }
+        public decimal PriceSale { get; set; }
         [Required]
         public string MetaKey { get; set; }
         public string MetaDesc { get; set; }

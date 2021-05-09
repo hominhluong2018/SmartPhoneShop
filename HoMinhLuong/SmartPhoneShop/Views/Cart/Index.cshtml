@@ -9,14 +9,15 @@
     <div class="gio-hang">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <h3 class="gio-hang-cua-ban"><i class="fa fa-cart-plus"></i>Giỏ Hàng Của Bạn</h3>
+                <div class="col-12 my-5">
+                    <h3 class="gio-hang-cua-ban text-primary"><i class="fa fa-cart-plus"></i>  Giỏ Hàng Của Bạn</h3>
                 </div>
                 <div class="col-8">
-                    @{ float tongtien = 0;}
+                    @{ decimal tongtien = 0;}
                     @foreach (var item in Model)
                     {
                         tongtien += item.Product.PriceSale * item.Quantity;
+                        <input type="hidden" value="@item.ProductId" id="productId" />
                         <div class="row mot-sp-gh mb-2">
                             <div class="col-3"><img src="~/Public/Image/Product/@item.Product.Img" width="100%" alt="Alternate Text" /></div>
                             <div class="col-9 thong-tin-san-pham-gh">
@@ -26,7 +27,7 @@
                                 <a href="#"><button class="btn btn-outline-info btn-sm">Mua Sau</button></a>
                                 <h5 class="soluong mt-1">
                                     Số Lượng:
-                                    <input class="text-center" type="number" name="name" value="@item.Quantity" max="10" min="1" />
+                                    <input class="text-center" type="number" name="Quantity" value="@item.Quantity" max="10" min="1" />
 
                                 </h5>
                             </div>
@@ -37,18 +38,16 @@
                 </div>
                 <div class="col-4">
                     </div>
-                    <div class="row thanh-tien">
-                        <div class="col-6"><h3 class="Ten-sp">Tạm Tính:</h3></div>
-                        <div class="col-6"><h3 class="Ten-sp">@tongtien</h3></div>
+                    <div class="row thanh-tien mt-5">
                         <div class="col-6"><h3 class="Ten-sp">Thành Tiền:</h3></div>
                         <div class="col-6">
-                            <h5 class="gia-sp">@tongtien$</h5>
+                            <h5 class="gia-sp">@String.Format("{0:n0}", @tongtien) VNĐ</h5>
                             <small>(Đã bao gồm vat nếu có)</small>
                         </div>
                     </div>
                     <div class="row thanh-toan">
-                        <div class="col-12">
-                            <a href="#"><button type="button" class="btn btn-danger btn-lg btn-block">Thanh Toan</button></a>
+                        <div class="col-12 my-5 ml-5">
+                            <a href="#"><button type="button" class="btn btn-danger btn-lg btn-block">Thanh Toán</button></a>
                         </div>
                     </div>
                 </div>
@@ -64,10 +63,11 @@ else
                     <h3 class="gio-hang-cua-ban"><i class="fa fa-cart-plus"></i>Giỏ Hàng Của Bạn</h3>
                 </div>
                 <div class="col-8">
-                    <script>alert("Chưa Có Sản Phẩm Trong Giỏ Hàng")</script>
                     <div class="alert-dark">Chưa Có Sản Phẩm Nào Được Chọn</div>
                 </div>
             </div>
         </div>
     </div>
 }
+
+<script src="~/Public/js/cart.js"></script>
