@@ -12,6 +12,7 @@ namespace SmartPhoneShop.Controllers
         MenuDAO menuDAO = new MenuDAO();
         SliderDAO sliderDAO = new SliderDAO();
         CategoryDAO categoryDAO = new CategoryDAO();
+        ProductDAO _productDAO = new ProductDAO();
         // GET: Module
         public ActionResult MainMenu()
         {
@@ -30,11 +31,16 @@ namespace SmartPhoneShop.Controllers
         }
         public ActionResult ProductBuyHot()
         {
-            return View("ProductBuyHot");
+            var list = _productDAO.GetAllProduct(4, 0);
+            return View("ProductBuyHot",list);
         }
         public ActionResult LastNews()
         {
             return View("LastNews");
+        }
+        public ActionResult Option()
+        {
+            return View("Option");
         }
     }
 }

@@ -21,7 +21,7 @@ namespace MyLibrary.Model
         public string PassWord { get; set; }
         [Required]
         public string Email { get; set; }
-        public int Gender { get; set; }
+        public int Role { get; set; }
         [Required]
         public string Phone { get; set; }
         public string Img { get; set; }

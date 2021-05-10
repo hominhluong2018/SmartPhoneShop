@@ -5,10 +5,11 @@
 }
 
 @Html.Action("Slideshow", "Module")
-
+@Html.Action("Option", "Module")
 <div class="row">
     <div class="col-md-3 mt-5">
         @Html.Action("ListCategory", "Module")
+        @Html.Action("ProductBuyHot", "Module")
     </div>
     <div class="col-md-9 mt-5 border-gray">
         @foreach (var cat in Model)

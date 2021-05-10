@@ -19,7 +19,6 @@ namespace MyLibrary.DAO
 
             return row;
         }
-
         public Product getRow(int? id)
         {
             var row = db.Products.Find(id);

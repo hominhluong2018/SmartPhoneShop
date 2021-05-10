@@ -44,7 +44,7 @@ namespace MyLibrary.DAO
         public User getRow(string username)
         {
             var row = db.Users
-                .Where(m => m.Status == 1 && (m.UserName == username||m.Email== username))
+                .Where(m => m.Status == 1 && m.Role==1 && (m.UserName == username||m.Email== username))
                 .FirstOrDefault();
             return row;
         }
