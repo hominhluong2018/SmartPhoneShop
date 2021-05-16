@@ -337,7 +337,7 @@
     <Compile Include="Areas\Admin\Controllers\SliderController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\CartController.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\GioithieuController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
@@ -378,11 +378,12 @@
     <Content Include="Views\Site\ProductHome.cshtml" />
     <Content Include="Views\Module\LastNews.cshtml" />
     <Content Include="Views\Gioithieu\Index.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contacts\Index.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Module\Option.cshtml" />
     <Content Include="Views\Customer\Signin.cshtml" />
     <Content Include="Views\Customer\Regist.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

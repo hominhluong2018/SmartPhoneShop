@@ -1,27 +1,35 @@
 ﻿
 @{
-    ViewBag.Title = "Signin";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Đăng Nhập";
 }
 
-<div class="container">
-    <div class="login-form">
-        <form action="">
-            <h1>Hãy đăng nhập</h1>
-            <div class="input-box">
-                <i></i>
-                <input type="text" name="username" placeholder="Nhập tài khoản">
+<link href="~/Areas/Public/css/login.css" rel="stylesheet" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+@using (Html.BeginForm())
+{
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="text-center font-weight-bold mt-2">
+                <h2>Hãy Đăng Nhập</h2>
             </div>
-            <div class="input-box">
-                <i></i>
-                <input type="password" name="pass" placeholder="Nhập mật khẩu">
-            </div>
-            <div class="btn-box text-center">
-                <button type="submit">
-                    Đăng nhập
-                </button>
-            </div>
-        </form>
+
+            <!-- Login Form -->
+            <form>
+                <input type="text" id="login" class="fadeIn second" required name="username" placeholder="Tên đăng nhập">
+
+                <input type="password" required id="password" class="fadeIn third" name="pass" placeholder="Mật khẩu">
+
+                <input type="submit" class="fadeIn fourth" value="Đăng Nhập">
+            </form>
+            <form>
+                @Html.Raw(ViewBag.StrError)
+            </form>
+        </div>
     </div>
-</div>
+}
 

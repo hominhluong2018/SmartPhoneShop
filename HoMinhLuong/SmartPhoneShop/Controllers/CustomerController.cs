@@ -26,11 +26,12 @@ namespace SmartPhoneShop.Controllers
             string pass = MyString.ToMD5(filed["pass"]);
             string error = "";
             //xu li
-            User user_row = _userDAO.getRow(user);
+            User user_row = _userDAO.GetRow(user);
             if (user_row != null)
             {
                 if (user_row.PassWord == pass)
                 {
+                    Session["FullName"] = user_row.FullName;
                     Session["UserAdmin"] = user_row.UserName;
                     Session["UserId"] = user_row.Id.ToString();
 
@@ -52,6 +53,13 @@ namespace SmartPhoneShop.Controllers
         public ActionResult Regist()
         {
             return View();
+        }
+        public ActionResult Logout()
+        {
+            Session["FullName"] = "";
+            Session["UserAdmin"] = "";
+            Session["UserId"] = "";
+            return Redirect("~/");
         }
     }
 }

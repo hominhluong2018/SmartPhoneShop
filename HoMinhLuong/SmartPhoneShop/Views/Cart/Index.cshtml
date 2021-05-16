@@ -24,7 +24,7 @@
                                 <h3 class="Ten-sp">@item.Product.Name</h3>
                                 <h5 class="gia-sp mb-2">Giá:   @String.Format("{0:n0}", @item.Product.PriceSale) VNĐ<del> @String.Format("{0:n0}", @item.Product.Price) VNĐ</del></h5>
                                 <a href="@Url.Action("DeleteItem","Cart", new {productId = item.Product.Id})"><button class="btn btn-outline-info btn-sm">Xóa</button></a>
-                                <a href="#"><button class="btn btn-outline-info btn-sm">Mua Sau</button></a>
+                                <a href="https://localhost:44317/"><button class="btn btn-outline-info btn-sm">Mua Sau</button></a>
                                 <h5 class="soluong mt-1">
                                     Số Lượng:
                                     <input class="text-center" type="number" name="Quantity" value="@item.Quantity" max="10" min="1" />

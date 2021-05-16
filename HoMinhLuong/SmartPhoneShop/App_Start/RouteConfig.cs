@@ -35,7 +35,7 @@ namespace SmartPhoneShop
             routes.MapRoute(
              name: "LienHe",
              url: "lien-he",
-             defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+             defaults: new { controller = "Contacts", action = "Index" },
              namespaces: new[] { "SmartPhoneShop.Controllers" }
          );
             //URL cấp 1

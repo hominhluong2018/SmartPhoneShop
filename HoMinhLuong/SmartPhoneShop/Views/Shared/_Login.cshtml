@@ -1,0 +1,35 @@
+﻿@{
+    var fullName = Session["FullName"] as string;
+    var a = 2;
+}
+
+<section class="topbar bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md"> <i class="fas fa-globe-asia"></i>Chào mừng bạn đến với Minh Lượng Mobile </div>
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item dropdown ">
+                    @if (!string.IsNullOrEmpty(fullName))
+                    {
+                        <a class="nav-link dropdown-toggle" style="color:black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>@fullName
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Customer/Logout">Đăng xuất</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <a class="nav-link dropdown-toggle" style="color:black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>Tài Khoản
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Customer/Signin">Đăng Nhập</a>
+                            <a class="dropdown-item" href="/Customer/Regist">Đăng Kí</a>
+                        </div>
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
