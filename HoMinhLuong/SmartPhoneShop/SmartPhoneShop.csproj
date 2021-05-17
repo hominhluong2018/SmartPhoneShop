@@ -378,7 +378,7 @@
     <Content Include="Views\Site\ProductHome.cshtml" />
     <Content Include="Views\Module\LastNews.cshtml" />
     <Content Include="Views\Gioithieu\Index.cshtml" />
-    <Content Include="Views\Contacts\Index.cshtml" />
+    <Content Include="Views\Contacts\Create.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Module\Option.cshtml" />
     <Content Include="Views\Customer\Signin.cshtml" />

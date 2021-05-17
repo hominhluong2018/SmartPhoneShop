@@ -13,15 +13,18 @@ namespace MyLibrary.Model
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [RegularExpression(@"^[\p{L}\p{N}]*$", ErrorMessage = "Vui lòng nhập tên hợp lệ")]
         public string FullName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập")]
+        [EmailAddress(ErrorMessage = "Vui lòng nhập email hợp lệ")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Vui lòng nhập")]
+        [Phone(ErrorMessage ="Vui lòng nhập số điện thoại hợp lệ")]
         public string Phone { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập")]
         public string Title { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Vui lòng nhập")]
         public string Detail { get; set; }
         public string ReplayDetail { get; set; }
         public int? ReplayID { get; set; }
