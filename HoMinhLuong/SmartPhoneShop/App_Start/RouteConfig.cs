@@ -23,8 +23,8 @@ namespace SmartPhoneShop
             defaults: new { controller = "GioiThieu", action = "Index", id = UrlParameter.Optional }
         );
             routes.MapRoute(
-                name: "TatCaBaiViet",
-                url: "bai-viet",
+                name: "Tintuc",
+                url: "tin-tuc",
                 defaults: new { controller = "Site", action = "Post", id = UrlParameter.Optional }
             );
             routes.MapRoute(

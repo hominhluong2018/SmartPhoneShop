@@ -22,6 +22,15 @@ namespace MyLibrary.DAO
             return list;
 
         }
+        public List<Post> GetList(string slug)
+        {
+            var list = db.Posts
+              .Where(m => m.Status == 1)
+              .OrderByDescending(m => m.CreatedDate)
+              .ToList();
+            return list;
+
+        }
         public Post getRow(String slug)
         {
             var row = db.Posts

@@ -98,17 +98,17 @@ namespace SmartPhoneShop.Controllers
             ViewBag.ListOther = listother;
              return View("ProductDetail", row);
         }
-        public ActionResult Post()
+        public ActionResult Post(string slug)
         {
-            return View("Post");
+            var list = _postDAO.GetList(slug);
+            return View("Post", list);
         }
         public ActionResult PostTopic(String slug)
         {
-
             var row_topic = _topicDAO.getRow(slug);
             ViewBag.Title = row_topic.Name;
             int topicid = row_topic.Id;
-            //var list = _postDAO.getList(); 
+            var list = _postDAO.getList(1, 3,1);
             return View("PostTopic");
         }
         public ActionResult PostDetail(String slug)

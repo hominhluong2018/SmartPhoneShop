@@ -14,7 +14,7 @@ namespace MyLibrary.Model
         [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Vui lòng nhập")]
-        [RegularExpression(@"^[\p{L}\p{N}]*$", ErrorMessage = "Vui lòng nhập tên hợp lệ")]
+        [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "Vui lòng nhập tên hợp lệ")]
         public string FullName { get; set; }
         [Required(ErrorMessage = "Vui lòng nhập")]
         [EmailAddress(ErrorMessage = "Vui lòng nhập email hợp lệ")]

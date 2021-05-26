@@ -1,39 +1,79 @@
-﻿
+﻿@using SmartPhoneShop.Library;
+
+@model MyLibrary.Model.User
 @{
     ViewBag.Title = "Đăng Ký";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using (Html.BeginForm("Regist", "Customer", FormMethod.Post, new { area = "SmartPhoneShop.Controllers" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 <div class="container">
-    <div class="login-form">
-        <form action="" method="post">
-            <h1>Hãy đăng ký</h1>
-            <div class="input-box">
-                <i></i>
-                <input type="text" placeholder="Nhập tài khoản">
+    <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <div class="text-uppercase text-center text-info"><strong>Xin vui lòng tạo Tài khoản</strong></div>
+                    @if (TempData.ContainsKey("XMessage"))
+                    {
+                        MyMessage sms = (MyMessage)TempData["XMessage"];
+                        <div class="alert alert-@sms.Type">
+                            @sms.Msg
+                        </div>
+                    }
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4 boder-gray">
+                            <div class="form-group">
+                                <label>Họ Và Tên</label>
+                                @Html.EditorFor(m => m.FullName, new { htmlAttributes = new { @class = "form-control" } })
+                                <div class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.FullName)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Tên tài khoản</label>
+                                @Html.EditorFor(m => m.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                <div class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.UserName)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Mật Khẩu</label>
+                                @Html.EditorFor(m => m.PassWord, new { htmlAttributes = new { @class = "form-control" } })
+                                <div></div>
+                                <div class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.PassWord)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Số Điện Thoại</label>
+                                @Html.EditorFor(m => m.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                <div class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.Phone)
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                <div class="text-danger">
+                                    @Html.ValidationMessageFor(m => m.Email)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                    
+               
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-sm btn-info">Tạo tài khoản</button>
+                </div>
             </div>
-            <div class="input-box">
-                <i></i>
-                <input type="password" placeholder="Nhập mật khẩu">
-            </div>
-            <div class="input-box">
-                <i></i>
-                <input type="password" placeholder="Nhập lại mật khẩu">
-            </div>
-            <div class="input-box">
-                <i></i>
-                <input type="text" placeholder="Nhập số điện thoại">
-            </div>
-            <div class="input-box">
-                <i></i>
-                <input type="text" placeholder="Nhập địa chỉ">
-            </div>
-            <div class="btn-box text-center">
-                <button type="submit">
-                    Đăng Ký
-                </button>
-            </div>
-        </form>
     </div>
 </div>
+}
 

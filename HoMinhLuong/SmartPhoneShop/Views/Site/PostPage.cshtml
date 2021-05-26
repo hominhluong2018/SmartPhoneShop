@@ -1,6 +1,6 @@
-﻿@model MyLibrary.Model.Post
+﻿@*@model MyLibrary.Model.Post
 @{
-    ViewBag.Title = ViewBag.Title;
+    ViewBag.Title = "PostPage";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,7 +11,9 @@
             <p class="content">
                 @Html.Raw(Model.Detail)
             </p>
+            <a href="~/@Model.Slug">alo</a>
+            <img src="~/Public/image/tintuc/@Model.Img" alt="Alternate Text" />
         </div>
     </div>
-</div>
+</div>*@
 
