@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using MyLibrary.DAO;
 using MyLibrary.Model;
 using SmartPhoneShop.Library;
-
+using SmartPhoneShop.Model;
 
 namespace SmartPhoneShop.Controllers
 {
@@ -26,7 +26,7 @@ namespace SmartPhoneShop.Controllers
             string pass = MyString.ToMD5(filed["pass"]);
             string error = "";
             //xu li
-            User user_row = _userDAO.GetRow(user);
+            var user_row = _userDAO.GetRow(user);
             if (user_row != null)
             {
                 if (user_row.PassWord == pass)
@@ -50,9 +50,37 @@ namespace SmartPhoneShop.Controllers
             ViewBag.StrError = "<div class='text-danger'>" + error + "</div>";
             return View();
         }
-        public ActionResult Regist()
+        public ActionResult Index()
         {
-            return View();
+            return View("Regist");
+        }
+
+        [HttpPost]
+        public ActionResult Regist(UserRegister vm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(vm);
+            }
+
+            var user = new User
+            {
+                UserName= vm.UserName,
+                PassWord = MyString.ToMD5(vm.PassWord),
+                Phone = vm.Phone,
+                Email = vm.Email,
+                FullName = vm.FullName,
+                CreatedDate = DateTime.Now,
+                UpdatedDate = DateTime.Now,
+                Role =2,
+                Status = 1
+
+            };
+            _userDAO.getInsert(user);
+            var successMsg = "Bạn đã dăng kí thành công";
+            TempData["XMessage"] = new MyMessage(successMsg, "success");
+
+            return RedirectToAction("Index");
         }
         public ActionResult Logout()
         {

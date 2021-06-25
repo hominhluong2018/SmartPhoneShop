@@ -1,4 +1,5 @@
 ﻿using MyLibrary.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -64,8 +65,16 @@ namespace MyLibrary.DAO
         //Thêm
         public void getInsert(User row)
         {
-            db.Users.Add(row);
-            db.SaveChanges();
+            try
+            {
+                db.Users.Add(row);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
 
         }
         //Sửa

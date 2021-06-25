@@ -13,16 +13,11 @@ namespace MyLibrary.Model
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         public string FullName { get; set; }
-        [Required]
         public string UserName { get; set; }
-        [Required]
         public string PassWord { get; set; }
-        [Required]
         public string Email { get; set; }
         public int Role { get; set; }
-        [Required]
         public string Phone { get; set; }
         public string Img { get; set; }
         public int? CreatedBy { get; set; }

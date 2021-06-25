@@ -33,7 +33,6 @@ namespace SmartPhoneShop.Controllers
             var successMsg = "Nội dung của bạn đã gửi tới admin";
             TempData["XMessage"] = new MyMessage(successMsg, "success");
 
-
             return RedirectToAction("Index");
         }
     }
